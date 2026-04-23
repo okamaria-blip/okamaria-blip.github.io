@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- REPLACE: page title -->
+  <title>Maria Oka — Author</title>
+  <meta name="description" content="Official website of Maria Oka, author of young adult and middle grade fantasy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Lora:ital,wght@1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       WATERCOLOR BACKGROUND ELEMENTS
+       ═══════════════════════════════════════════════ -->
+  <div class="watercolor-bg" aria-hidden="true">
+    <div class="blob blob-sage  blob-1"></div>
+    <div class="blob blob-cream blob-2"></div>
+    <div class="blob blob-brown blob-3"></div>
+    <div class="blob blob-sage  blob-4"></div>
+    <div class="blob blob-gold  blob-5"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Maria Oka — Home">
+        <span class="nav-logo-name">Maria Oka</span>
+        <span class="nav-logo-subtitle">Children's Book Author</span>
+      </a>
+
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="index.html"   class="nav-link">Home</a></li>
+        <li><a href="about.html"   class="nav-link">About</a></li>
+        <li><a href="book.html"    class="nav-link">Book</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         HERO + TEASER (shared bridge background)
+         ═══════════════════════════════════════════════ -->
+    <div class="hero-bridge-wrap">
+
+      <!-- Bridge: faded background spanning both sections -->
+      <img src="other images/8.jpg" alt="" class="hero-bridge-bg" aria-hidden="true">
+
+      <section class="hero" aria-label="Hero">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <p class="hero-tagline">Building bridges through story.</p>
+
+          <!-- Book Cover -->
+          <div class="hero-book">
+            <div class="book-cover-wrap">
+              <img src="images/book-cover.jpg" alt="Wish on a Willow book cover" class="book-cover-real">
+            </div>
+          </div><!-- /hero-book -->
+
+          <!-- CTA Button -->
+          <a href="book.html" class="btn btn-primary">
+            Buy the Book <span class="btn-arrow">→</span>
+          </a>
+        </div><!-- /hero-content -->
+      </section><!-- /hero -->
+
+      <!-- ═══════════════════════════════════════════════
+           TEASER SECTION
+           ═══════════════════════════════════════════════ -->
+      <section class="teaser-section" aria-label="Book excerpt">
+        <div class="container">
+          <div class="teaser-content fade-in">
+            <blockquote class="teaser-quote">
+              If Eloise saves the willow tree, can its magic save her dad?
+            </blockquote>
+            <a href="book.html" class="btn btn-secondary">
+              Discover the Story <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /hero-bridge-wrap -->
+
+  </main><!-- /main -->
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <!-- REPLACE: author name in footer -->
+        <p class="footer-deco" aria-hidden="true">✦ ✦ ✦</p>
+        <p class="footer-name">Maria Oka</p>
+        <p class="footer-tagline">Children's Book Author</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">·</span>
+          <a href="about.html">About</a>
+          <span aria-hidden="true">·</span>
+          <a href="book.html">Book</a>
+          <span aria-hidden="true">·</span>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <!-- REPLACE: copyright year and name -->
+        <p class="footer-copy">&copy; 2026 Maria Oka. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
