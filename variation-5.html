@@ -1,0 +1,310 @@
+<!--
+VARIATION 5: Full Synthesis — All Five Design Dimensions
+Changes applied:
+  1. PALETTE — Pale sage-tinted surface (#ecf3ed body), warm ivory sections, deep forest accent
+  2. HERO — Book cover moved to top of hero (CSS order), 255px, richer shadow; bridge bg at 12% opacity;
+             hero glow warmer; eyebrow/title/tagline/CTA follow the cover
+  3. MOTIF — Willow frond SVG in: nav logo (small), section divider (replaces ornament), footer
+             All instances monochrome sage; no multicolor
+  4. TYPOGRAPHY — Hero title clamp(4rem,11vw,8.5rem); tagline larger; teaser quote larger + display-scale;
+                  Section padding increased; letter-spacing on eyebrow and labels increased
+  5. NAV — Labels renamed: About → My Story [PERSONALIZE], Book → The Book, Contact → Say Hello [PERSONALIZE]
+            Nav visually lighter: thin border, high transparency, reduced height (62px)
+  Footer nav labels match main nav labels.
+  All text content unchanged (no copy edits).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Oka — Author</title>
+  <meta name="description" content="Official website of Maria Oka, author of young adult and middle grade fantasy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Identification Banner ───────────────────── */
+    .var-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #1e3a2f;
+      color: #ecf3ed;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 8px 1rem;
+      pointer-events: none;
+    }
+    .nav { top: 32px !important; }
+    main { padding-top: calc(62px + 32px) !important; }
+
+    /* ── 1. PALETTE: Pale sage surface + deep forest ─ */
+    :root {
+      --cream:       #ecf3ed;
+      --cream-mid:   #dde8de;
+      --cream-dark:  #bfd4c1;
+      --sage:        #5a8a5e;
+      --sage-light:  #9dc4a0;
+      --sage-pale:   #c8dfc9;
+      --sage-dark:   #3a6640;
+      --brown:       #8a6840;
+      --brown-light: #b89060;
+      --gold:        #b89660;
+      --gold-dark:   #8a6a30;
+      --forest:      #1e3a2f;
+      --forest-dark: #10211a;
+      --text-dark:   #1e2e22;
+      --text-medium: #4a5e4e;
+      --text-light:  #7a9280;
+    }
+    body { background-color: var(--cream); }
+    .nav { background: rgba(236,243,237,0.88) !important; }
+    .teaser-section {
+      background: linear-gradient(
+        150deg,
+        rgba(90,138,94,0.09) 0%,
+        rgba(184,150,96,0.08) 45%,
+        rgba(90,138,94,0.09) 100%
+      ) !important;
+    }
+    .footer { background: var(--forest) !important; }
+
+    /* ── 2. HERO: Book-dominant, personal, warm ─────── */
+    .nav {
+      height: 62px !important;
+      border-bottom: 1px solid rgba(90,138,94,0.10) !important;
+      box-shadow: none !important;
+    }
+    .nav-link { font-size: 0.70rem !important; letter-spacing: 0.20em !important; }
+
+    .hero { padding: 5rem 2rem 6rem !important; }
+    .hero::before {
+      background: radial-gradient(
+        ellipse 72% 68% at 50% 58%,
+        rgba(236,243,237,0.48) 0%,
+        rgba(236,243,237,0.18) 42%,
+        transparent 70%
+      ) !important;
+    }
+    .hero-bridge-bg { opacity: 0.12 !important; }
+    .hero-content { gap: 2rem !important; }
+
+    /* Book cover first */
+    .hero-book    { order: 0 !important; margin-bottom: 0 !important; }
+    .hero-eyebrow { order: 1 !important; margin-top: 0.75rem !important; margin-bottom: 0.6rem !important; }
+    .hero-title   { order: 2 !important; margin-bottom: 0.75rem !important; }
+    .hero-tagline { order: 3 !important; margin-bottom: 0 !important; }
+    .hero-content > .btn { order: 4 !important; margin-top: 0.75rem !important; }
+
+    .hero-book .book-cover-real {
+      width: 255px !important;
+      box-shadow: 18px 24px 56px rgba(30,58,47,0.50), -5px 0 16px rgba(30,58,47,0.18) !important;
+    }
+
+    /* ── 3. MOTIF: Willow frond — defined via CSS color ─ */
+    .v-motif-logo {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 0.48rem;
+      color: var(--sage);
+      opacity: 0.70;
+    }
+    .v-motif-divider {
+      display: block;
+      margin: 0 auto 1.8rem;
+      color: var(--sage);
+      opacity: 0.60;
+    }
+    .v-motif-footer {
+      display: block;
+      margin: 0 auto 0.75rem;
+      color: var(--sage-light);
+      opacity: 0.52;
+    }
+
+    /* ── 4. TYPOGRAPHY: expressive, generous whitespace ─ */
+    .hero-title {
+      font-size: clamp(4rem, 11vw, 8.5rem) !important;
+      line-height: 0.90 !important;
+      letter-spacing: -0.025em !important;
+    }
+    .hero-eyebrow {
+      font-size: 0.68rem !important;
+      letter-spacing: 0.30em !important;
+    }
+    .hero-tagline {
+      font-size: clamp(1.2rem, 2.8vw, 1.85rem) !important;
+    }
+    .teaser-quote {
+      font-size: clamp(1.15rem, 2.4vw, 1.42rem) !important;
+      line-height: 2.05 !important;
+      padding: 2.6rem 3rem !important;
+    }
+    section { padding: 6.5rem 0 !important; }
+    .teaser-section { padding: 5.5rem 0 7.5rem !important; }
+    .section-label {
+      font-size: 0.70rem !important;
+      letter-spacing: 0.26em !important;
+      color: var(--sage-dark) !important;
+    }
+
+    /* ── Buttons updated to match deep forest palette ─ */
+    .btn-primary { background: var(--forest) !important; }
+    .btn-primary:hover { background: var(--sage-dark) !important; }
+  </style>
+</head>
+<body>
+
+  <div class="var-banner">Variation 5 — Full Synthesis</div>
+
+  <div class="watercolor-bg" aria-hidden="true">
+    <div class="blob blob-sage  blob-1"></div>
+    <div class="blob blob-cream blob-2"></div>
+    <div class="blob blob-brown blob-3"></div>
+    <div class="blob blob-sage  blob-4"></div>
+    <div class="blob blob-gold  blob-5"></div>
+  </div>
+
+  <!-- ── 5. NAV: renamed labels, minimal visual treatment ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Maria Oka — Home">
+        <span class="logo-accent">MARIA</span> Oka
+        <!-- Willow frond motif in logo -->
+        <svg class="v-motif-logo" viewBox="0 0 28 48" width="16" height="28" fill="none" aria-hidden="true">
+          <path d="M14,46 Q12,34 14,20 Q16,6 14,0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.65"/>
+          <path d="M14,40 Q6,33 4,25"  stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.60"/>
+          <path d="M14,30 Q22,23 24,15" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.60"/>
+          <path d="M14,20 Q6,14 4,7"   stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+          <ellipse cx="4"  cy="24" rx="2.2" ry="4" fill="currentColor" opacity="0.32" transform="rotate(-25,4,24)"/>
+          <ellipse cx="24" cy="14" rx="2.2" ry="4" fill="currentColor" opacity="0.32" transform="rotate(25,24,14)"/>
+          <ellipse cx="4"  cy="6"  rx="1.8" ry="3" fill="currentColor" opacity="0.26" transform="rotate(-20,4,6)"/>
+        </svg>
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="index.html"   class="nav-link">Home</a></li>
+        <!-- PERSONALIZE: "My Story" is a suggested label — update to match author preference -->
+        <li><a href="about.html"   class="nav-link">My Story</a></li>
+        <!-- "The Book" is a suggested label — could also use the book title -->
+        <li><a href="book.html"    class="nav-link">The Book</a></li>
+        <!-- PERSONALIZE: "Say Hello" is a suggested label — update to match author preference -->
+        <li><a href="contact.html" class="nav-link">Say Hello</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" aria-label="Hero">
+      <img src="other images/8.jpg" alt="" class="hero-bridge-bg" aria-hidden="true">
+      <div class="hero-vine" aria-hidden="true">
+        <svg viewBox="0 0 90 500" xmlns="http://www.w3.org/2000/svg" width="90" height="500" fill="none">
+          <path d="M45,500 Q30,440 40,380 Q52,320 38,260 Q24,200 44,140 Q56,100 45,30"
+                stroke="rgba(90,138,94,0.30)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M38,380 Q10,360 6,338 Q22,344 38,380" fill="rgba(90,138,94,0.20)"/>
+          <path d="M44,300 Q72,282 76,260 Q60,268 44,300"  fill="rgba(90,138,94,0.17)"/>
+          <path d="M38,220 Q10,208 6,186 Q22,195 38,220"   fill="rgba(90,138,94,0.20)"/>
+          <path d="M44,150 Q72,135 76,114 Q60,124 44,150"  fill="rgba(90,138,94,0.17)"/>
+          <path d="M46,80  Q20,66  16,44  Q32,55  46,80"   fill="rgba(90,138,94,0.19)"/>
+          <circle cx="12" cy="340" r="3.5" fill="rgba(90,138,94,0.24)"/>
+          <circle cx="74" cy="262" r="3"   fill="rgba(90,138,94,0.19)"/>
+          <circle cx="10" cy="188" r="3.5" fill="rgba(90,138,94,0.24)"/>
+        </svg>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Young Adult &amp; Middle Grade Fantasy</p>
+        <h1 class="hero-title">MARIA <em>Oka</em></h1>
+        <p class="hero-tagline">Where lost things find their way home.</p>
+        <div class="hero-book">
+          <div class="book-cover-wrap">
+            <img src="images/book-cover.jpg" alt="Wish on a Willow book cover" class="book-cover-real">
+          </div>
+        </div>
+        <a href="book.html" class="btn btn-primary">
+          Buy the Book <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,35 Q180,70 360,35 Q540,0 720,35 Q900,70 1080,35 Q1260,0 1440,35 L1440,70 L0,70 Z"
+              fill="rgba(90,138,94,0.07)"/>
+        <path d="M0,42 Q220,14 440,42 Q660,70 880,42 Q1100,14 1320,42 Q1390,52 1440,42"
+              fill="none" stroke="rgba(90,138,94,0.22)" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <section class="teaser-section" aria-label="Book excerpt">
+      <div class="container">
+        <div class="teaser-content fade-in">
+
+          <!-- Section divider: willow motif -->
+          <div class="section-ornament" aria-hidden="true">
+            <svg class="v-motif-divider" viewBox="0 0 220 32" width="220" height="32" fill="none">
+              <line x1="0" y1="16" x2="88" y2="16" stroke="currentColor" stroke-width="0.8" opacity="0.32"/>
+              <path d="M110,30 Q108,22 110,12 Q112,2 110,0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.62"/>
+              <path d="M110,26 Q103,20 101,14" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" opacity="0.56"/>
+              <path d="M110,19 Q117,13 119,7"  stroke="currentColor" stroke-width="0.9" stroke-linecap="round" opacity="0.56"/>
+              <ellipse cx="101" cy="13" rx="2" ry="3.5" fill="currentColor" opacity="0.30" transform="rotate(-25,101,13)"/>
+              <ellipse cx="119" cy="6"  rx="2" ry="3.5" fill="currentColor" opacity="0.30" transform="rotate(25,119,6)"/>
+              <line x1="132" y1="16" x2="220" y2="16" stroke="currentColor" stroke-width="0.8" opacity="0.32"/>
+            </svg>
+          </div>
+
+          <blockquote class="teaser-quote">
+            In the heart of the Thornwood, where the old maps end and the new ones dare not begin,
+            twelve-year-old Wren discovers a compass that points not north — but toward the thing
+            you need most in the world.
+          </blockquote>
+          <a href="book.html" class="btn btn-secondary">
+            Discover the Story <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <!-- Willow frond motif in footer -->
+        <svg class="v-motif-footer" viewBox="0 0 28 48" width="18" height="30" fill="none" aria-hidden="true">
+          <path d="M14,46 Q12,34 14,20 Q16,6 14,0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.65"/>
+          <path d="M14,40 Q6,33 4,25"  stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.60"/>
+          <path d="M14,30 Q22,23 24,15" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.60"/>
+          <path d="M14,20 Q6,14 4,7"   stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+          <ellipse cx="4"  cy="24" rx="2.2" ry="4" fill="currentColor" opacity="0.32" transform="rotate(-25,4,24)"/>
+          <ellipse cx="24" cy="14" rx="2.2" ry="4" fill="currentColor" opacity="0.32" transform="rotate(25,24,14)"/>
+          <ellipse cx="4"  cy="6"  rx="1.8" ry="3" fill="currentColor" opacity="0.26" transform="rotate(-20,4,6)"/>
+        </svg>
+        <p class="footer-deco" aria-hidden="true">✦ ✦ ✦</p>
+        <p class="footer-name">Maria Oka</p>
+        <p class="footer-tagline">Young Adult &amp; Middle Grade Fantasy</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">·</span>
+          <a href="about.html">My Story</a>
+          <span aria-hidden="true">·</span>
+          <a href="book.html">The Book</a>
+          <span aria-hidden="true">·</span>
+          <a href="contact.html">Say Hello</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 Maria Oka. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

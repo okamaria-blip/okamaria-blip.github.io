@@ -1,0 +1,226 @@
+<!--
+VARIATION 1: Warm Ivory Palette + Expressive Typography
+Changes applied:
+  - Palette shifted to warm ivory (#faf5ec) + deeper sage accent (#3d6644)
+  - Hero title dramatically enlarged: clamp(4rem, 11vw, 8.5rem)
+  - Hero tagline enlarged for visual weight
+  - Teaser quote larger and more spacious (padding, font-size, line-height)
+  - Section vertical padding increased to 6.5rem for generous whitespace
+  - .section-label letter-spacing increased, color deepened
+  - Nav background tinted to match new ivory
+  - All other elements kept close to Option 5 original
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Oka — Author</title>
+  <meta name="description" content="Official website of Maria Oka, author of young adult and middle grade fantasy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Identification Banner ───────────────────── */
+    .var-banner {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #3d6644;
+      color: #faf5ec;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 8px 1rem;
+      pointer-events: none;
+    }
+    .nav { top: 32px !important; }
+    main { padding-top: calc(70px + 32px) !important; }
+
+    /* ── Palette: Warm Ivory + Deeper Sage ────────── */
+    :root {
+      --cream:      #faf5ec;
+      --cream-mid:  #f0e6d3;
+      --cream-dark: #d8c4a8;
+      --sage:       #628e66;
+      --sage-light: #a8c9aa;
+      --sage-pale:  #d4e8d5;
+      --sage-dark:  #3d6644;
+      --forest:     #253f2b;
+      --forest-dark:#162518;
+    }
+    body { background-color: var(--cream); }
+    .nav { background: rgba(250,245,236,0.90) !important; }
+    .teaser-section {
+      background: linear-gradient(
+        150deg,
+        rgba(98,142,102,0.08) 0%,
+        rgba(198,162,104,0.07) 45%,
+        rgba(98,142,102,0.08) 100%
+      );
+    }
+
+    /* ── Typography: Large, expressive ───────────── */
+    .hero-title {
+      font-size: clamp(4rem, 11vw, 8.5rem) !important;
+      line-height: 0.90 !important;
+      letter-spacing: -0.025em !important;
+      margin-bottom: 1.6rem !important;
+    }
+    .hero-eyebrow {
+      font-size: 0.68rem !important;
+      letter-spacing: 0.30em !important;
+      margin-bottom: 1.6rem !important;
+    }
+    .hero-tagline {
+      font-size: clamp(1.2rem, 2.8vw, 1.85rem) !important;
+      margin-bottom: 3.2rem !important;
+    }
+
+    /* ── Teaser: bigger, more impactful ──────────── */
+    .teaser-quote {
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem) !important;
+      line-height: 2.05 !important;
+      padding: 2.6rem 3rem !important;
+    }
+
+    /* ── Whitespace: generous section padding ─────── */
+    section { padding: 6.5rem 0 !important; }
+    .teaser-section { padding: 5.5rem 0 7.5rem !important; }
+
+    /* ── Section label: more prominent ──────────── */
+    .section-label {
+      font-size: 0.7rem !important;
+      letter-spacing: 0.26em !important;
+      color: var(--sage-dark) !important;
+    }
+
+    /* ── Buttons: use deeper sage ─────────────────── */
+    .btn-primary { background: var(--forest) !important; }
+    .btn-primary:hover { background: var(--sage-dark) !important; }
+    .btn-secondary { border-color: var(--sage) !important; }
+  </style>
+</head>
+<body>
+
+  <div class="var-banner">Variation 1 — Warm Palette &amp; Expressive Type</div>
+
+  <div class="watercolor-bg" aria-hidden="true">
+    <div class="blob blob-sage  blob-1"></div>
+    <div class="blob blob-cream blob-2"></div>
+    <div class="blob blob-brown blob-3"></div>
+    <div class="blob blob-sage  blob-4"></div>
+    <div class="blob blob-gold  blob-5"></div>
+  </div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Maria Oka — Home">
+        <span class="logo-accent">MARIA</span> Oka
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="index.html"   class="nav-link">Home</a></li>
+        <li><a href="about.html"   class="nav-link">About</a></li>
+        <li><a href="book.html"    class="nav-link">Book</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" aria-label="Hero">
+      <img src="other images/8.jpg" alt="" class="hero-bridge-bg" aria-hidden="true">
+      <div class="hero-vine" aria-hidden="true">
+        <svg viewBox="0 0 90 500" xmlns="http://www.w3.org/2000/svg" width="90" height="500" fill="none">
+          <path d="M45,500 Q30,440 40,380 Q52,320 38,260 Q24,200 44,140 Q56,100 45,30"
+                stroke="rgba(122,158,126,0.32)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M38,380 Q10,360 6,338 Q22,344 38,380" fill="rgba(122,158,126,0.22)"/>
+          <path d="M44,300 Q72,282 76,260 Q60,268 44,300"  fill="rgba(122,158,126,0.18)"/>
+          <path d="M38,220 Q10,208 6,186 Q22,195 38,220"   fill="rgba(122,158,126,0.22)"/>
+          <path d="M44,150 Q72,135 76,114 Q60,124 44,150"  fill="rgba(122,158,126,0.18)"/>
+          <path d="M46,80  Q20,66  16,44  Q32,55  46,80"   fill="rgba(122,158,126,0.20)"/>
+          <circle cx="12" cy="340" r="3.5" fill="rgba(122,158,126,0.25)"/>
+          <circle cx="74" cy="262" r="3"   fill="rgba(122,158,126,0.20)"/>
+          <circle cx="10" cy="188" r="3.5" fill="rgba(122,158,126,0.25)"/>
+        </svg>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Young Adult &amp; Middle Grade Fantasy</p>
+        <h1 class="hero-title">MARIA <em>Oka</em></h1>
+        <p class="hero-tagline">Where lost things find their way home.</p>
+        <div class="hero-book">
+          <div class="book-cover-wrap">
+            <img src="images/book-cover.jpg" alt="Wish on a Willow book cover" class="book-cover-real">
+          </div>
+        </div>
+        <a href="book.html" class="btn btn-primary">
+          Buy the Book <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,35 Q180,70 360,35 Q540,0 720,35 Q900,70 1080,35 Q1260,0 1440,35 L1440,70 L0,70 Z"
+              fill="rgba(122,158,126,0.07)"/>
+        <path d="M0,42 Q220,14 440,42 Q660,70 880,42 Q1100,14 1320,42 Q1390,52 1440,42"
+              fill="none" stroke="rgba(122,158,126,0.22)" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <section class="teaser-section" aria-label="Book excerpt">
+      <div class="container">
+        <div class="teaser-content fade-in">
+          <div class="section-ornament" aria-hidden="true">
+            <svg viewBox="0 0 120 22" xmlns="http://www.w3.org/2000/svg" width="120" height="22">
+              <line x1="0" y1="11" x2="46" y2="11" stroke="rgba(122,158,126,0.35)" stroke-width="1"/>
+              <circle cx="60" cy="11" r="4" fill="none" stroke="rgba(122,158,126,0.5)" stroke-width="1"/>
+              <circle cx="60" cy="11" r="8" fill="none" stroke="rgba(122,158,126,0.22)" stroke-width="0.6"/>
+              <line x1="74" y1="11" x2="120" y2="11" stroke="rgba(122,158,126,0.35)" stroke-width="1"/>
+            </svg>
+          </div>
+          <blockquote class="teaser-quote">
+            In the heart of the Thornwood, where the old maps end and the new ones dare not begin,
+            twelve-year-old Wren discovers a compass that points not north — but toward the thing
+            you need most in the world.
+          </blockquote>
+          <a href="book.html" class="btn btn-secondary">
+            Discover the Story <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-deco" aria-hidden="true">✦ ✦ ✦</p>
+        <p class="footer-name">Maria Oka</p>
+        <p class="footer-tagline">Young Adult &amp; Middle Grade Fantasy</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">·</span>
+          <a href="about.html">About</a>
+          <span aria-hidden="true">·</span>
+          <a href="book.html">Book</a>
+          <span aria-hidden="true">·</span>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 Maria Oka. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
