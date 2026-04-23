@@ -216,7 +216,7 @@ section { padding: var(--section-pad) 0; position: relative; }
   font-family: 'Lora', serif;
   font-style: italic;
   font-weight: 500;
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 4vw, 4.5rem);
   color: var(--forest);
   line-height: 1;
   text-transform: uppercase;
@@ -501,8 +501,8 @@ section { padding: var(--section-pad) 0; position: relative; }
   transform: translateY(-7px) rotate(1.5deg);
   box-shadow: 14px 20px 48px rgba(26,46,34,0.42), -3px 0 12px rgba(26,46,34,0.16);
 }
-.hero-book .book-cover-real       { width: 195px; }
-.book-cover-large .book-cover-real { width: 270px; }
+.hero-book .book-cover-real       { width: clamp(195px, 16vw, 280px); }
+.book-cover-large .book-cover-real { width: clamp(240px, 22vw, 320px); }
 
 /* --- 10. SECTION ORNAMENT ------------------------------------ */
 .section-ornament {
@@ -941,18 +941,52 @@ section { padding: var(--section-pad) 0; position: relative; }
 .fade-in-delay-3 { transition-delay: 0.3s; }
 
 /* --- 19. RESPONSIVE ------------------------------------------ */
-@media (max-width: 900px) {
-  .about-grid { grid-template-columns: 220px 1fr; gap: 3rem; }
-  .book-showcase { grid-template-columns: auto 1fr; gap: 3rem; }
-  .book-cover-large .book-cover-art { width: 220px; }
+
+/* ── Mid laptop (≤ 1200px) ───────────────────────────────────── */
+@media (max-width: 1200px) {
+  :root { --nav-h: 175px; }
 }
 
+/* ── Large tablet / small desktop (≤ 900px) ─────────────────── */
+@media (max-width: 900px) {
+  :root { --nav-h: 155px; }
+
+  /* Layouts */
+  .about-grid       { grid-template-columns: 200px 1fr; gap: 3rem; }
+  .book-showcase    { grid-template-columns: auto 1fr; gap: 2rem; }
+
+  /* Praise — 2 columns on tablet */
+  .praise-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Mobile (≤ 768px) ───────────────────────────────────────── */
 @media (max-width: 768px) {
-  :root { --section-pad: 3.5rem; }
+  :root {
+    --section-pad: 3rem;
+    --nav-h: 90px;
+  }
 
-  /* Mobile nav overlay */
-  .hamburger { display: flex; }
+  /* Nav — compact row: logo centred, hamburger pinned right */
+  .nav-inner {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 1.5rem;
+    gap: 0;
+    position: relative;
+  }
+  .nav-logo        { gap: 0.1rem; }
+  .nav-logo-name   { font-size: 1.9rem; }
+  .nav-logo-subtitle { font-size: 0.55rem; letter-spacing: 0.11em; }
 
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Full-screen nav overlay */
   .nav-menu {
     position: fixed;
     inset: 0;
@@ -970,44 +1004,72 @@ section { padding: var(--section-pad) 0; position: relative; }
     z-index: 999;
   }
   .nav-menu.active { transform: translateY(0); }
-  .nav-link { font-size: 1.15rem; letter-spacing: 0.14em; }
+  .nav-link        { font-size: 1.2rem; letter-spacing: 0.14em; }
 
   /* Hero */
-  .hero { min-height: auto; padding: 3rem 1.5rem 4.5rem; }
-  .hero-vine { display: none; }
+  .hero       { min-height: auto; padding: 2rem 1.5rem 2.5rem; }
+  .hero-vine  { display: none; }
+  .hero-tagline { font-size: clamp(1.1rem, 5vw, 1.5rem); margin-bottom: 1.4rem; }
+  .hero-book  { margin-bottom: 1.4rem; }
+  .hero-book .book-cover-real { width: 160px; }
+
+  /* Teaser */
+  .teaser-section { padding: 2rem 0 3rem; }
+  .teaser-quote   { padding: 1.5rem; font-size: 1rem; }
 
   /* About */
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .author-photo-sticky { position: static; max-width: 240px; margin: 0 auto; }
-  .photo-frame { aspect-ratio: 1; }
+  .about-grid           { grid-template-columns: 1fr; gap: 2rem; }
+  .author-photo-sticky  { position: static; max-width: 220px; margin: 0 auto; }
+  .photo-frame          { aspect-ratio: 1; }
+  .more-about p         { text-indent: 1em; }
+  .fun-facts ul         { columns: 1; }
 
   /* Book */
-  .book-showcase { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
-  .book-cover-large { display: flex; justify-content: center; }
-  .book-cover-large .book-cover-art { position: static; width: 210px; }
-  .book-meta { justify-content: center; }
-  .buy-grid { grid-template-columns: 1fr; }
+  .book-showcase    { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .book-cover-large { display: flex; flex-direction: column; align-items: center; }
+  .book-cover-large .book-cover-real { width: 200px; }
+  .book-info        { text-align: left; }
+  .book-meta        { justify-content: center; }
+  .buy-section      { text-align: left; }
+  .buy-grid         { grid-template-columns: 1fr; }
   .book-synopsis p:first-child::first-letter { font-size: 2.8em; }
+  .praise-grid      { grid-template-columns: 1fr; gap: 1rem; }
+  .praise-card      { padding: 1rem; }
 
   /* Contact */
-  .contact-form { padding: 2rem 1.4rem; }
+  .contact-form    { padding: 2rem 1.4rem; }
+  .contact-section { padding: 0 0.5rem; }
 
   /* Footer */
-  .footer-nav { gap: 0.8rem; }
+  .footer-nav { gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
 
-  /* Blobs softer on mobile */
+  /* Blobs */
   .blob { filter: blur(65px); }
 }
 
+/* ── Small mobile (≤ 480px) ─────────────────────────────────── */
 @media (max-width: 480px) {
-  .container { padding: 0 1.25rem; }
-  .book-meta { gap: 1.2rem; }
-  .facts-grid { grid-template-columns: 1fr; }
-  .teaser-quote { padding: 1.5rem; }
-  .teaser-quote::before { font-size: 3.5rem; }
+  :root { --nav-h: 78px; }
+
+  .container      { padding: 0 1.1rem; }
+  .nav-logo-name  { font-size: 1.55rem; }
+
+  /* Hero */
+  .hero           { padding: 1.5rem 1rem 2rem; }
+  .hero-book .book-cover-real { width: 140px; }
+
+  /* About */
+  .facts-grid     { grid-template-columns: 1fr; }
+  .fun-facts      { padding: 1.5rem; }
+  .fun-facts ul   { columns: 1; }
+
+  /* Book */
+  .book-meta      { gap: 1rem; flex-wrap: wrap; }
+  .praise-grid    { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-form   { padding: 1.5rem 1rem; border-radius: 12px; }
+  .teaser-quote   { padding: 1.2rem; }
 }
 
 /* ── Option 5: Full Immersion ────────────────── */
