@@ -78,42 +78,29 @@
               </svg>
             </div>
 
-            <!-- REPLACE: contact page intro text -->
             <h2 style="font-size: clamp(1.3rem, 2.5vw, 1.8rem); margin-bottom: 0.75rem;">
               Let's connect.
             </h2>
             <p>
-              <!-- REPLACE: customize this intro with your own message and response-time note -->
               Whether you're a reader wanting to share your thoughts, a school or library interested
               in a visit or event, a fellow author, or a member of the media — I'd love to hear from
-              you. I read every message personally and do my best to reply within a few weeks.
+              you.
             </p>
 
-            <!-- REPLACE: add or remove any special-use note here -->
             <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-light);">
-              <strong style="color:var(--brown);">For school visits &amp; speaking requests,</strong>
-              please include your school name, location, and preferred date range in your message.
+              <strong style="color:var(--brown);">For professional inquiries,</strong>
+              Maria Oka is represented by Krista Van Dolzer at the <a href="https://theunteragency.com/" target="_blank" rel="noopener" style="color: var(--brown); text-decoration: underline;">Unter Agency</a>.
             </p>
 
           </div><!-- /contact-intro -->
 
           <!-- ── Contact Form ───────────────────────── -->
           <div class="fade-in fade-in-delay-1">
-            <!--
-              REPLACE: wire this form to your backend, Netlify Forms, Formspree,
-              ConvertKit, etc. Add the relevant action / data-netlify attributes here.
-              Example for Netlify Forms:
-                <form class="contact-form" name="contact" method="POST" data-netlify="true">
-                  <input type="hidden" name="form-name" value="contact">
-                  ...
-              Example for Formspree:
-                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                  ...
-            -->
-            <form class="contact-form" action="https://formspree.io/f/mariaokawriter@gmail.com" method="POST" aria-label="Contact form">
 
-              <!-- Honeypot spam protection (hidden, leave empty) -->
-              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="form-message success" data-fs-success style="display:none;">Thank you! Your message has been sent. I'll be in touch soon.</p>
+            <p class="form-message error" data-fs-error style="display:none;"></p>
+
+            <form id="contact-form" class="contact-form" aria-label="Contact form">
 
               <!-- Name -->
               <div class="form-group">
@@ -124,10 +111,12 @@
                   id="name"
                   name="name"
                   autocomplete="name"
-                  placeholder="Wren Calloway"
+                  placeholder="Name"
                   required
                   aria-required="true"
+                  data-fs-field
                 >
+                <span class="form-field-error" data-fs-error="name"></span>
               </div>
 
               <!-- Email -->
@@ -142,10 +131,12 @@
                   placeholder="you@example.com"
                   required
                   aria-required="true"
+                  data-fs-field
                 >
+                <span class="form-field-error" data-fs-error="email"></span>
               </div>
 
-              <!-- Subject (optional, remove if unwanted) -->
+              <!-- Subject -->
               <div class="form-group">
                 <label class="form-label" for="subject">Subject</label>
                 <input
@@ -154,7 +145,9 @@
                   id="subject"
                   name="subject"
                   placeholder="School visit, book club, press inquiry…"
+                  data-fs-field
                 >
+                <span class="form-field-error" data-fs-error="subject"></span>
               </div>
 
               <!-- Message -->
@@ -167,18 +160,24 @@
                   placeholder="Tell me what's on your mind…"
                   required
                   aria-required="true"
+                  data-fs-field
                 ></textarea>
+                <span class="form-field-error" data-fs-error="message"></span>
               </div>
 
               <!-- Submit -->
-              <button type="submit" class="btn btn-primary form-submit">
+              <button type="submit" class="btn btn-primary form-submit" data-fs-submit-btn>
                 Send Message <span class="btn-arrow">→</span>
               </button>
 
-              <!-- Form feedback message (injected by JS) -->
-              <!-- .form-message will appear here after submission -->
-
             </form>
+
+            <script>
+              window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+              formspree('initForm', { formElement: '#contact-form', formId: 'mvzdevjy' });
+            </script>
+            <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
           </div>
 
           <!-- ── Other Ways to Connect ─────────────── -->
@@ -189,32 +188,11 @@
             <!-- Add, remove, or restyle these links as needed. -->
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
 
-              <!-- REPLACE: Instagram link -->
-              <a href="#" class="btn btn-secondary" style="font-size:0.78rem; padding:0.65em 1.5em;">
+              <a href="https://www.instagram.com/mariaokawriter/" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.78rem; padding:0.65em 1.5em;">
                 Instagram
               </a>
 
-              <!-- REPLACE: Twitter / X link (remove if not using) -->
-              <a href="#" class="btn btn-secondary" style="font-size:0.78rem; padding:0.65em 1.5em;">
-                Twitter / X
-              </a>
-
-              <!-- REPLACE: newsletter signup link / Substack / Mailchimp etc. -->
-              <a href="#" class="btn btn-secondary" style="font-size:0.78rem; padding:0.65em 1.5em;">
-                Join the Newsletter
-              </a>
-
-              <!-- REPLACE: Goodreads author page link -->
-              <a href="#" class="btn btn-secondary" style="font-size:0.78rem; padding:0.65em 1.5em;">
-                Goodreads
-              </a>
-
             </div>
-
-            <p style="font-size:0.85rem; color:var(--text-light); margin-top:1.5rem;">
-              <!-- REPLACE: response time / DM policy note -->
-              <em>Please note: I'm not able to accept unsolicited manuscripts or queries via social media.</em>
-            </p>
           </div>
 
         </div><!-- /contact-section -->

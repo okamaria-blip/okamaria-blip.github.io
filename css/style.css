@@ -33,7 +33,7 @@
   --font-body:      'Lato', system-ui, sans-serif;
 
   /* Layout */
-  --nav-h:          210px;
+  --nav-h:          155px;
   --container:      1100px;
   --section-pad:    5rem;
 
@@ -194,13 +194,13 @@ section { padding: var(--section-pad) 0; position: relative; }
 .nav-inner {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0.4rem 2rem;
+  padding: 0.2rem 2rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.3rem;
+  gap: 0.7rem;
 }
 
 .nav-logo {
@@ -493,6 +493,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 /* Real book cover image */
 .book-cover-real {
   display: block;
+  height: auto;
   border-radius: 3px 6px 6px 3px;
   box-shadow: var(--shadow-book);
   transition: transform 0.45s ease, box-shadow 0.45s ease;
@@ -502,7 +503,7 @@ section { padding: var(--section-pad) 0; position: relative; }
   box-shadow: 14px 20px 48px rgba(26,46,34,0.42), -3px 0 12px rgba(26,46,34,0.16);
 }
 .hero-book .book-cover-real       { width: clamp(195px, 16vw, 280px); }
-.book-cover-large .book-cover-real { width: clamp(240px, 22vw, 320px); }
+.book-cover-large .book-cover-real { width: clamp(180px, 16vw, 240px); }
 
 /* --- 10. SECTION ORNAMENT ------------------------------------ */
 .section-ornament {
@@ -856,6 +857,12 @@ section { padding: var(--section-pad) 0; position: relative; }
   color: #7a3020;
   border: 1px solid rgba(196,100,70,0.3);
 }
+.form-field-error {
+  display: block;
+  font-size: 0.82rem;
+  color: #7a3020;
+  margin-top: 0.3rem;
+}
 
 /* --- 17. FOOTER ---------------------------------------------- */
 .footer {
@@ -944,17 +951,17 @@ section { padding: var(--section-pad) 0; position: relative; }
 
 /* ── Large desktop / 1080p screens (≥ 1440px) ───────────────── */
 @media (min-width: 1440px) {
-  :root { --nav-h: 230px; }
+  :root { --nav-h: 175px; }
 
   .hero-book .book-cover-real       { width: clamp(280px, 18vw, 360px); }
-  .book-cover-large .book-cover-real { width: clamp(300px, 24vw, 400px); }
+  .book-cover-large .book-cover-real { width: clamp(220px, 20vw, 300px); }
   .hero-tagline { font-size: clamp(1.6rem, 2.2vw, 2.2rem); }
   .praise-card blockquote { font-size: 1.05rem; }
 }
 
 /* ── Mid laptop (≤ 1200px) ───────────────────────────────────── */
 @media (max-width: 1200px) {
-  :root { --nav-h: 175px; }
+  :root { --nav-h: 130px; }
 }
 
 /* ── Large tablet / small desktop (≤ 900px) ─────────────────── */
@@ -1085,7 +1092,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 /* ── Option 5: Full Immersion ────────────────── */
 .hero-immersion-bg {
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center;
@@ -1141,7 +1148,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 }
 .hero-bridge-bg {
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center bottom;
@@ -1152,7 +1159,7 @@ section { padding: var(--section-pad) 0; position: relative; }
 }
 .page-willow-bg {
   position: fixed;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center;
