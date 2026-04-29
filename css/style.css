@@ -844,8 +844,11 @@ section { padding: var(--section-pad) 0; position: relative; }
   padding: 0.9rem 1.1rem;
   border-radius: 9px;
   font-size: 0.95rem;
-  display: none;
+  display: block;
   transition: opacity 0.45s ease;
+}
+.form-message[hidden] {
+  display: none;
 }
 .form-message.success {
   background: rgba(122,158,126,0.14);
