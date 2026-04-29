@@ -942,6 +942,16 @@ section { padding: var(--section-pad) 0; position: relative; }
 
 /* --- 19. RESPONSIVE ------------------------------------------ */
 
+/* ── Large desktop / 1080p screens (≥ 1440px) ───────────────── */
+@media (min-width: 1440px) {
+  :root { --nav-h: 230px; }
+
+  .hero-book .book-cover-real       { width: clamp(280px, 18vw, 360px); }
+  .book-cover-large .book-cover-real { width: clamp(300px, 24vw, 400px); }
+  .hero-tagline { font-size: clamp(1.6rem, 2.2vw, 2.2rem); }
+  .praise-card blockquote { font-size: 1.05rem; }
+}
+
 /* ── Mid laptop (≤ 1200px) ───────────────────────────────────── */
 @media (max-width: 1200px) {
   :root { --nav-h: 175px; }
